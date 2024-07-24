@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management of Student List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* أضف هذا لإخفاء الجدول افتراضياً */
+        #studentsTable {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <h2>Management of Student List</h2>
+
+    <form id="addStudentForm">
+        <div id="idstu" class="form-group">
+            <label  class="infostu" for="studentId">id:</label>
+        <input class="inputinfo" type="number" id="studentId" name="studentId" required>
+        </div>
+        <div class="form-group">
+            <label class="infostu" for="studentName">Name:</label>
+        <input class="inputinfo" type="text" id="studentName" name="studentName" required>
+        </div>
+        <div class="form-group">
+            <label class="infostu" id="status" for="studentStatus">registration status:</label>
+        <select  class="select" id="studentStatus" name="studentStatus" required>
+            <option value="registered">registered</option>
+            <option value="registered">unregistered</option>
+        </select><br><br>
+        </div>
+        <div id="buttons" class="form-group">
+            <button type="submit">Add Student</button>
+            <button type="button" id="toggleTableBtn" onclick="toggleTable()">Students Presentation</button>
+        </div>
+    </form>
+
+    <table id="studentsTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Registered</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="studentsList">
+        </tbody>
+    </table>
+
+    <button class="delete" onclick="removeAllStudents()">Remove All Students</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
